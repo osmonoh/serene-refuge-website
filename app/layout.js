@@ -12,8 +12,8 @@ import "@/app/_styles/globals.css";
 
 export const metadata = {
     title: {
-        template: "%s | The Wild Oasis",
-        default: "The Wild Oasis"
+        template: "%s | Serene Refuge",
+        default: "Serene Refuge"
     },
     description:
         "Luxurious cabin hotel, located in the heart of the Italian Dolomites, surrounded by beautiful mountains and dark forests"

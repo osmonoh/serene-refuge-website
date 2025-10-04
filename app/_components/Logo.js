@@ -7,10 +7,10 @@ export default function Logo() {
                 src="/logo.png"
                 height="60"
                 width="60"
-                alt="The Wild Oasis logo"
+                alt="Serene Refuge logo"
             />
             <span className="text-xl font-semibold text-primary-100">
-                The Wild Oasis
+                Serene Refuge
             </span>
         </Link>
     );

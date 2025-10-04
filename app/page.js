@@ -7,7 +7,7 @@ export default function Page() {
 
             <Counter />
 
-            <footer>Copyright by The Wild Oasis</footer>
+            <footer>Copyright by Serene Refuge</footer>
         </div>
     );
 }
