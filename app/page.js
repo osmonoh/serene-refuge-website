@@ -6,8 +6,6 @@ export default function Page() {
             <h1>Hello Next!</h1>
 
             <Counter />
-
-            <footer>Copyright by Serene Refuge</footer>
         </div>
     );
 }
