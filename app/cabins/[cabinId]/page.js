@@ -1,6 +1,7 @@
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
-import { getCabin } from "@/app/_lib/data-service";
+import { getCabin, getCabins } from "@/app/_lib/data-service";
 import Image from "next/image";
+import TextExpander from "@/app/_components/TextExpander";
 
 // export const metadata = {
 //     title: "Cabin"
@@ -9,6 +10,19 @@ import Image from "next/image";
 export async function generateMetadata({ params }) {
     const { name } = await getCabin(params.cabinId);
     return { title: `Cabin ${name}` };
+}
+
+// render this page as static (normally it is rendered dynamically)
+// doing this we have the whole app static atm and we could deploy it as static code (next.config file)
+// the optimised images wouldn't work - we can use normal img tag or create a custom loader (e.g. cloudinary)
+export async function generateStaticParams() {
+    const cabins = await getCabins();
+
+    const ids = cabins.map((cabin) => ({
+        cabinId: cabin.id.toString()
+    }));
+
+    return ids;
 }
 
 export default async function Page({ params }) {
@@ -42,7 +56,7 @@ export default async function Page({ params }) {
                     </h3>
 
                     <p className="text-lg text-primary-300 mb-10">
-                        {description}
+                        <TextExpander>{description}</TextExpander>
                     </p>
 
                     <ul className="flex flex-col gap-4 mb-7">
